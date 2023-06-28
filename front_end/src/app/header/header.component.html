@@ -12,16 +12,20 @@
         <a class="nav-link active" area-current="page" routerLink="/home">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" area-current="page" routerLink="/admin">Admin Dashboard</a>
+        <a class="nav-link active" area-current="page" routerLink="/admin"
+         *ngIf="userService.roleMatch(['Admin'])"
+        >Admin Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" area-current="page" routerLink="/user">User Dashboard</a>
+        <a class="nav-link active" area-current="page" routerLink="/user"
+                *ngIf="userService.roleMatch(['User'])"
+        >User Dashboard</a>
       </li>
 
     </ul>
     <div class="header-button">
-<button *ngIf="!isLogggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
-<button *ngIf="isLogggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+<button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
+<button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
     </div>
 
   </div>
