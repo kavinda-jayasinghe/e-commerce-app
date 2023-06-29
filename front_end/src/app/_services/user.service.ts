@@ -20,6 +20,18 @@ export class UserService {
     });
   }
 
+  public forUser(){
+    return this.httpclient.get(this.PATH_OF_API+'/forUser',{
+      responseType:'text',
+    });
+  }
+  public forAdmin(){
+    return this.httpclient.get(this.PATH_OF_API+'/forAdmin',{
+      responseType:'text',
+    });
+  }
+
+
   public roleMatch(allowedRoles: any): any {
     let isMatch = false;
     const userRoles: any = this.userAuthService.getRoles();
