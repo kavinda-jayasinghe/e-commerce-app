@@ -8,7 +8,7 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'admin',
     component: AdminComponent,

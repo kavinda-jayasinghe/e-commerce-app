@@ -16,7 +16,10 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { UserService } from './_services/user.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,7 @@ import { RouterModule } from '@angular/router';
     UserComponent,
     HeaderComponent,
     ForbiddenComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,17 +36,21 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     AuthGuard,
     {
-      provide :HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
     },
-    UserService
+    UserService,
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
