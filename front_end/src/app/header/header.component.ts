@@ -24,4 +24,11 @@ export class HeaderComponent implements OnInit {
     this.userAuthService.clear();
     this.router.navigate(['/']);
   }
+
+  public isAdmin(){
+    return this.userAuthService.isAdmin();
+  }
+  public isuser(){
+    return this.userAuthService.isUser();
+  }
 }
